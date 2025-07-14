@@ -1,0 +1,44 @@
+name: Build LaTeX document
+
+on:
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Compile LaTeX document
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: thesis_main.tex
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: thesis_main.pdf
+          path: thesis_main.pdf
+          if-no-files-found: error
+
+  count-words:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Install detex dependencies
+        run: |
+          sudo apt-get update -qy
+          sudo apt-get install -y flex libfl-dev
+      - name: Install detex
+        run: |
+          git clone https://github.com/pkubowicz/opendetex.git
+          cd opendetex
+          make
+          sudo make install
+      - name: Run Word Count Script
+        run: bash countwords.sh

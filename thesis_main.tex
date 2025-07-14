@@ -1,0 +1,687 @@
+%-----------------------------------
+% Define document and include general packages
+%-----------------------------------
+% Tabellen- und Abbildungsverzeichnis stehen normalerweise nicht im
+% Inhaltsverzeichnis. Gleiches gilt für das Abkürzungsverzeichnis (siehe unten).
+% Manche Dozenten bemängeln das. Die Optionen 'listof=totoc,bibliography=totoc'
+% geben das Tabellen- und Abbildungsverzeichnis im Inhaltsverzeichnis (toc=Table
+% of Content) aus.
+% Da es aber verschiedene Regelungen je nach Dozent geben kann, werden hier
+% beide Varianten dargestellt.
+%\documentclass[12pt,oneside,titlepage,listof=totoc,bibliography=totoc]{scrartcl}
+\documentclass[12pt,oneside,titlepage]{scrartcl}
+
+%-----------------------------------
+% Dokumentensprache
+%-----------------------------------
+%\def\FOMEN{}% Auskommentieren um die Dokumentensprache auf englisch zu ändern
+\newif\ifde
+\newif\ifen
+
+%-----------------------------------
+% Meta informationen
+%-----------------------------------
+\input{skripte/meta}
+
+\newcommand{\langde}[1]{%
+   \ifde\selectlanguage{ngerman}#1\fi}
+\newcommand{\langen}[1]{%
+   \ifen\selectlanguage{english}#1\fi}
+\usepackage[utf8]{luainputenc}
+\langde{\usepackage[babel,german=quotes]{csquotes}}
+\langen{\usepackage[babel,english=british]{csquotes}}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage[a4paper, left=4cm, right=2cm, top=4cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{caption}
+\captionsetup[table]{
+    format=plain,
+    labelfont=bf,
+	font=small,
+    justification=centering,
+    labelsep=colon
+}
+\captionsetup[figure]{
+    format=plain,
+    labelfont=sf,
+	font=small, 
+    justification=centering,
+    labelsep=colon
+}
+%\usepackage[capposition=top]{floatrow}
+\usepackage[capposition=bottom]{floatrow}
+\floatsetup[table]{capposition=top}
+\usepackage{array}
+\usepackage{float}      %Positionierung von Abb. und Tabellen mit [H] erzwingen
+\usepackage{footnote}
+% Darstellung der Beschriftung von Tabellen und Abbildungen (Leitfaden S. 44)
+% singlelinecheck=false: macht die Caption linksbündig (statt zentriert)
+% labelfont auf fett: (Tabelle x.y:, Abbildung: x.y)
+% font auf fett: eigentliche Bezeichnung der Abbildung oder Tabelle
+% Fettschrift laut Leitfaden 2018 S. 45
+\usepackage[singlelinecheck=false, labelfont=bf, font=bf]{caption}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{mathptmx}
+%\usepackage{minted} %Kann für schöneres Syntax Highlighting genutzt werden. ACHTUNG: Python muss installiert sein.
+\usepackage[scaled=0.9]{helvet} % Behebt, zusammen mit Package courier, pixelige Überschriften. Ist, zusammen mit mathptx, dem times-Package vorzuziehen. Details: https://latex-kurs.de/fragen/schriftarten/Times_New_Roman.html
+\usepackage{courier}
+\usepackage{amsmath}
+\usepackage[table]{xcolor}
+\usepackage{marvosym}			% Verwendung von Symbolen, z.B. perfektes Eurozeichen
+
+\renewcommand\familydefault{\sfdefault}
+\usepackage{ragged2e}
+
+% Mehrere Fussnoten nacheinander mit Komma separiert
+\usepackage[hang,multiple]{footmisc}
+\setlength{\footnotemargin}{1em}
+
+% todo Aufgaben als Kommentare verfassen für verschiedene Editoren
+\usepackage{todonotes}
+
+% Verhindert, dass nur eine Zeile auf der nächsten Seite steht
+\setlength{\marginparwidth}{2cm}
+\usepackage[all]{nowidow}
+
+
+
+
+%-----------------------------------
+% Farbdefinitionen
+%-----------------------------------
+\definecolor{darkblack}{rgb}{0,0,0}
+\definecolor{dunkelgrau}{rgb}{0.8,0.8,0.8}
+\definecolor{hellgrau}{rgb}{0.0,0.7,0.99}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{marineblue}{rgb}{0.51, 0.76, 0.8}
+\definecolor{lightblue}{rgb}{0.4, 0.52, 0.8}
+\definecolor{darkyellow}{rgb}{1, 0.8, 0.2}
+\definecolor{darkorange}{rgb}{1, 0.5, 0.0}
+
+%-----------------------------------
+% Pakete für Tabellen
+%-----------------------------------
+\usepackage{epstopdf}
+\usepackage{nicefrac} % Brüche
+\usepackage{multirow}
+\usepackage{rotating} % vertikal schreiben
+\usepackage{mdwlist}
+\usepackage{tabularx}% für Breitenangabe
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%fix algorithmusverzeichnis
+\floatname{algorithm}{Algorithmus}
+\captionsetup[algorithm]{name=Algorithmus,labelsep=colon}
+%-----------------------------------
+% sauber formatierter Quelltext
+%-----------------------------------
+\usepackage{listings}
+
+% JavaScript als Sprache definieren:
+\lstdefinelanguage{JavaScript}{
+	keywords={break, super, case, extends, switch, catch, finally, for, const, function, try, continue, if, typeof, debugger, var, default, in, void, delete, instanceof, while, do, new, with, else, return, yield, enum, let, await},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this, interface, package, private, protected, public, static},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+\lstset{
+	%language=JavaScript,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	frame=l ,
+	xleftmargin=5pt,
+	xrightmargin=5pt,
+	basicstyle=\ttfamily\scriptsize,
+	stepnumber=1,
+	keywordstyle=\color{blue},          % keyword style
+  	commentstyle=\color{dkgreen},       % comment style
+  	stringstyle=\color{mauve}         % string literal style
+}
+
+\lstdefinelanguage{CSharp}{
+  keywords={
+    abstract, as, base, bool, break, byte, case, catch, char, checked, class, const, continue, 
+    decimal, default, delegate, do, double, else, enum, event, explicit, extern, false, finally, 
+    fixed, float, for, foreach, goto, if, implicit, in, int, interface, internal, is, lock, long, 
+    namespace, new, null, object, operator, out, override, params, private, protected, public, 
+    readonly, ref, return, sbyte, sealed, short, sizeof, stackalloc, static, string, struct, 
+    switch, this, throw, true, try, typeof, uint, ulong, unchecked, unsafe, ushort, using, 
+    virtual, void, volatile, while
+  },
+  keywordstyle=\color{lightblue}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=true,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{gray}\ttfamily,
+  stringstyle=\color{dkgreen}\ttfamily,
+  morestring=[b]',
+  morestring=[b]",
+  classoffset=0,
+  classoffset=1,
+  morekeywords={
+    GameObject, Transform, Vector2, Vector3, Vector2Int, Vector3Int, Quaternion, MonoBehaviour, 
+    Rigidbody, Collider, BoxCollider, CapsuleCollider, Component, Camera, Time, Input, Physics, 
+    RaycastHit, Ray, Mathf, Coroutine, Canvas, CanvasScaler, RectTransform, Button, Text, Image, 
+    GridLayoutGroup, WaitForSeconds, StartCoroutine, Instantiate, Destroy, Cinemachine, Tilemap, 
+    Grid, IEnumerator, Dictionary, List, SceneManager, PlayerPrefs
+  },
+  keywordstyle=\color{darkorange}\bfseries,
+  classoffset=0,
+  classoffset=2,
+  morekeywords={private, public, protected, readonly, static, abstract},
+  keywordstyle=\color{mauve}\bfseries,
+  classoffset=0,
+  classoffset=3,
+  morekeywords={
+    Awake, Start, Update, LateUpdate, FixedUpdate, OnEnable, OnDisable, OnDestroy, OnTriggerEnter, 
+    OnTriggerStay, OnTriggerExit, OnCollisionEnter, OnCollisionStay, OnCollisionExit, OnMouseDown, 
+    OnMouseUp, GetComponent, GetComponentInChildren, GetComponentInParent, AddComponent, FindObjectOfType, 
+    FindObjectsOfType, Instantiate, Destroy, DontDestroyOnLoad, Invoke, InvokeRepeating, CancelInvoke, 
+    IsInvoking, StartCoroutine, StopCoroutine, StopAllCoroutines, SetActive, gameObject, transform, 
+    position, rotation, localPosition, localRotation, localScale, parent, childCount, GetChild,
+    ScreenPointToRay, Raycast, Clamp, FloorToInt, CeilToInt, RoundToInt, Abs, Sin, Cos, Tan, 
+    Asin, Acos, Atan, Atan2, Sqrt, Pow, Exp, Log, Log10, Ceil, Floor, Round, Sign, Min, Max, 
+    Approximately, Lerp, LerpUnclamped, SmoothStep, MoveTowards, deltaTime, fixedDeltaTime, 
+    GetAxis, GetButton, GetButtonDown, GetButtonUp, GetKey, GetKeyDown, GetKeyUp, GetMouseButton, 
+    GetMouseButtonDown, GetMouseButtonUp, mousePosition, PlaceBlocks, SnapToGrid
+  },
+  keywordstyle=\color{marineblue}\bfseries,
+  classoffset=0,
+  classoffset=4,
+  morekeywords={
+    var, dynamic, get, set, value, partial, yield, add, remove, alias, ascending, descending, 
+    from, group, into, join, let, orderby, select, where, async, await, nameof, when
+  },
+  keywordstyle=\color{darkyellow}\bfseries,
+  classoffset=0
+}
+
+\lstset{
+    language=CSharp,
+    extendedchars=true,
+    basicstyle=\footnotesize\ttfamily,
+    showstringspaces=false,
+    showspaces=false,
+    numbers=left,
+    numberstyle=\footnotesize,
+    numbersep=9pt,
+    tabsize=2,
+    breaklines=true,
+    showtabs=false,
+    captionpos=b
+  }
+
+\lstdefinelanguage{TypeScript}{
+  keywords={
+    break, case, catch, class, continue, const, constructor, debugger, default, delete, do, else, enum, export, extends, false, finally, for, from, function, if, import, in, instanceof, let, new, null, return, super, switch, this, throw, true, try, typeof, var, void, while, with, as, any, implements, interface, package, static, yield, number, string, boolean, symbol, abstract, async, await, get, set, readonly, id, never, type, namespace, module, declare, global, keyof, unknown, infer, is, satisfies, override, unique, of
+  },
+  keywordstyle=\color{lightblue}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=true,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{gray}\ttfamily,
+  stringstyle=\color{dkgreen}\ttfamily,
+  morestring=[b]',
+  morestring=[b]",
+  classoffset=0,
+  classoffset=1,
+  morekeywords={
+    Component, FormBuilder, FormGroup, Validators, AbilityService, AbilityEntity, AbilityController, 
+    MonsterEntity, Skills, TimelineNodeBase, Injectable, Repository, undefined, Ability, Entity, 
+    PrimaryGeneratedColumn, Column, InjectRepository, OnInit, OnDestroy, AfterViewInit, 
+    ChangeDetectorRef, ElementRef, EventEmitter, ViewContainerRef, TemplateRef, 
+    ComponentFactoryResolver, NgZone, Router, ActivatedRoute, HttpClient, FormControl, 
+    FormArray, Observable, Subscription, Subject, BehaviorSubject, ReplaySubject, 
+    ChangeDetectionStrategy, ViewEncapsulation, Input, Output, Directive, HostBinding, 
+    HostListener, Pipe, PipeTransform, Injector, NgModule, Controller, Get, Post, Param, Body, Delete, Put, AbilityEndpoint, Creature, Monster
+  },
+  keywordstyle=\color{darkorange}\bfseries,
+  classoffset=0,
+  classoffset=2,
+  morekeywords={private, public, protected, readonly, static, abstract},
+  keywordstyle=\color{mauve}\bfseries,
+  classoffset=0,
+  classoffset=3,
+  morekeywords={
+    createForm, group, array, createAttributesFormGroup, createSkillsFormGroup, findAll, 
+    findOne, create, update, remove, constructor, find, save, findOneBy, ngOnInit, 
+    ngOnDestroy, ngAfterViewInit, subscribe, unsubscribe, emit, next, complete, error, 
+    pipe, map, filter, tap, switchMap, mergeMap, concatMap, takeUntil, takeWhile, 
+    distinctUntilChanged, debounceTime, throttleTime, catchError, finalize, forEach, 
+    push, pop, shift, unshift, splice, slice, join, split, concat, includes, indexOf
+  },
+  keywordstyle=\color{marineblue}\bfseries,
+  classoffset=0,
+  classoffset=4,
+  morekeywords={
+    @Input, @Output, @Component, @Injectable, @Directive, @Pipe, @NgModule, @Entity, 
+    @campaign-manager/shared, @PrimaryGeneratedColumn, @Column, @nestjs/common, 
+    @nestjs/typeorm, @InjectRepository, @Get, @Param, @Post, @Put, @Delete, 
+    @ManyToMany, @JoinTable, @OneToMany, @ManyToOne, @OneToOne, @JoinColumn, @ViewChild, 
+    @ViewChildren, @HostBinding, @HostListener, @ContentChild, @ContentChildren, 
+    @Optional, @Inject, @Self, @SkipSelf, @Host, @Query, @Body, @Headers, @Req, @Res
+  },
+  keywordstyle=\color{darkyellow}\bfseries,
+  classoffset=0
+}
+
+\lstset{
+  language=TypeScript,
+  extendedchars=true,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  showspaces=false,
+  numbers=left,
+  numberstyle=\footnotesize,
+  numbersep=9pt,
+  tabsize=2,
+  breaklines=true,
+  showtabs=false,
+  captionpos=b
+}
+
+\lstdefinelanguage{HTML}{
+  sensitive=false,
+  morecomment=[s]{<!--}{-->},
+  commentstyle=\color{gray}\ttfamily,
+  morestring=[b]',
+  morestring=[b]",
+  stringstyle=\color{dkgreen}\ttfamily,
+  keywords={html,head,title,base,link,meta,style,script,body,section,nav,article,aside,h1,h2,h3,h4,h5,h6,header,footer,address,main,p,hr,pre,blockquote,ol,ul,li,dl,dt,dd,figure,figcaption,div,a,em,strong,small,s,cite,dfn,abbr,time,code,var,samp,kbd,sub,sup,i,b,u,mark,ruby,rt,rp,bdi,bdo,span,br,wbr,ins,del,image,img,iframe,embed,object,param,video,audio,source,track,canvas,map,area,svg,math,table,caption,colgroup,col,tbody,thead,tfoot,tr,td,th,form,fieldset,legend,label,input,button,select,datalist,optgroup,option,textarea,output,progress,meter,details,summary,menu,menuitem,command,device,element,shadow,template,decorator,font,center,big,blink,marquee,p,-,floatLabel,cm,data,panel},
+  keywordstyle=\color{lightblue}\bfseries,
+  ndkeywords={class,id,style,href,src,alt,title,type,value,method,placeholder,charset,content,http-equiv,rel,sizes,pInputText,for,formControlName},
+  ndkeywordstyle=\color{mauve}\bfseries,
+}
+
+\lstset{
+  language=HTML,
+  extendedchars=true,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  showspaces=false,
+  numbers=left,
+  numberstyle=\footnotesize,
+  numbersep=9pt,
+  tabsize=2,
+  breaklines=true,
+  showtabs=false,
+  captionpos=b
+}
+
+%-----------------------------------
+%Literaturverzeichnis Einstellungen
+%-----------------------------------
+
+% Biblatex
+
+\usepackage{url}
+\urlstyle{same}
+
+%%%% Neuer Leitfaden (2018)
+\usepackage[
+backend=biber,
+style=ext-authoryear-ibid, % Auskommentieren und nächste Zeile einkommentieren, falls "Ebd." (ebenda) nicht für sich-wiederholende Fussnoten genutzt werden soll.
+%style=ext-authoryear,
+maxcitenames=3,	% mindestens 3 Namen ausgeben bevor et. al. kommt
+maxbibnames=999,
+mergedate=false,
+date=iso,
+seconds=true, %werden nicht verwendet, so werden aber Warnungen unterdrückt.
+urldate=iso,
+innamebeforetitle,
+dashed=false,
+autocite=footnote,
+doi=false,
+useprefix=true, % 'von' im Namen beachten (beim Anzeigen)
+mincrossrefs = 1
+]{biblatex}%iso dateformat für YYYY-MM-DD
+
+%weitere Anpassungen für BibLaTex
+\input{skripte/modsBiblatex2018}
+
+%%%%% Alter Leitfaden. Ggf. Einkommentieren und Bereich hierüber auskommentieren
+%\usepackage[
+%backend=biber,
+%style=numeric,
+%citestyle=authoryear,
+%url=false,
+%isbn=false,
+%notetype=footonly,
+%hyperref=false,
+%sortlocale=de]{biblatex}
+
+%weitere Anpassungen für BibLaTex
+%\input{skripte/modsBiblatex}
+
+%%%% Ende Alter Leitfaden
+
+%Bib-Datei einbinden
+\addbibresource{literatur/literatur.bib}
+
+% Zeilenabstand im Literaturverzeichnis ist Einzeilig
+% siehe Leitfaden S. 14
+\AtBeginBibliography{\singlespacing}
+
+%-----------------------------------
+% Silbentrennung
+%-----------------------------------
+\usepackage{hyphsubst}
+\HyphSubstIfExists{ngerman-x-latest}{%
+\HyphSubstLet{ngerman}{ngerman-x-latest}}{}
+
+%-----------------------------------
+% Pfad fuer Abbildungen
+%-----------------------------------
+\graphicspath{{./}{./abbildungen/}}
+
+%-----------------------------------
+% Weitere Ebene einfügen
+%-----------------------------------
+\input{skripte/weitereEbene}
+
+%-----------------------------------
+% Paket für die Nutzung von Anhängen
+%-----------------------------------
+\usepackage{appendix}
+
+%-----------------------------------
+% Zeilenabstand 1,5-zeilig
+%-----------------------------------
+\usepackage{setspace}
+\onehalfspacing
+
+%-----------------------------------
+% Absätze durch eine neue Zeile
+%-----------------------------------
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{0.8em plus 0.5em minus 0.3em}
+
+\sloppy					%Abstände variieren
+\pagestyle{headings}
+
+%----------------------------------
+% Präfix in das Abbildungs- und Tabellenverzeichnis aufnehmen, statt nur der Nummerierung (siehe Issue #206).
+%----------------------------------
+\KOMAoption{listof}{entryprefix} % Siehe KOMA-Script Doku v3.28 S.153
+\BeforeStartingTOC[lof]{\renewcommand*\autodot{:}} % Für den Doppelpunkt hinter Präfix im Abbildungsverzeichnis
+\BeforeStartingTOC[lot]{\renewcommand*\autodot{:}} % Für den Doppelpunkt hinter Präfix im Tabellenverzeichnis
+\BeforeStartingTOC[loa]{\renewcommand*\autodot{:}} % Für den Doppelpunkt hinter Präfix im Algorithmenverzeichnis
+
+%-----------------------------------
+% Abkürzungsverzeichnis
+%-----------------------------------
+\usepackage[printonlyused]{acronym}
+
+%-----------------------------------
+% Symbolverzeichnis
+%-----------------------------------
+% Quelle: https://www.namsu.de/Extra/pakete/Listofsymbols.pdf
+\usepackage[final]{listofsymbols}
+
+%-----------------------------------
+% Glossar
+%-----------------------------------
+\usepackage{glossaries}
+\glstoctrue %Auskommentieren, damit das Glossar nicht im Inhaltsverzeichnis angezeigt wird.
+\makenoidxglossaries
+\input{abkuerzungen/glossar}
+
+%-----------------------------------
+% PDF Meta Daten setzen
+%-----------------------------------
+\usepackage[hyperfootnotes=false]{hyperref} %hyperfootnotes=false deaktiviert die Verlinkung der Fußnote. Ansonsten inkompaibel zum Paket "footmisc"
+% Behebt die falsche Darstellung der Lesezeichen in PDF-Dateien, welche eine Übersetzung besitzen
+% siehe Issue 149
+\makeatletter
+\pdfstringdefDisableCommands{\let\selectlanguage\@gobble}
+\makeatother
+
+\hypersetup{
+    pdfinfo={
+        Title={\myTitel},
+        Subject={\myStudiengang},
+        Author={\myAutor},
+        Build=1.1
+    }
+}
+
+%-----------------------------------
+% PlantUML
+%-----------------------------------
+%\usepackage{plantuml}
+
+%-----------------------------------
+% Umlaute in Code korrekt darstellen
+% siehe auch: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+%-----------------------------------
+\lstset{literate=
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\EUR}}1 {£}{{\pounds}}1 {„}{{\glqq{}}}1
+}
+
+%-----------------------------------
+% Kopfbereich / Header definieren
+%-----------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+% Seitenzahl oben, mittig, mit Strichen beidseits
+% \fancyhead[C]{-\ \thepage\ -}
+
+% Seitenzahl oben, mittig, entsprechend Leitfaden ohne Striche beidseits
+\fancyhead[C]{\thepage}
+%\fancyhead[L]{\leftmark}							% kein Footer vorhanden
+% Waagerechte Linie unterhalb des Kopfbereiches anzeigen. Laut Leitfaden ist
+% diese Linie nicht erforderlich. Ihre Breite kann daher auf 0pt gesetzt werden.
+\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\headrulewidth}{0pt}
+
+%-----------------------------------
+% Damit die hochgestellten Zahlen auch auf die Fußnote verlinkt sind (siehe Issue 169)
+%-----------------------------------
+\hypersetup{colorlinks=true, breaklinks=true, linkcolor=darkblack, citecolor=darkblack, menucolor=darkblack, urlcolor=darkblack, linktoc=all, bookmarksnumbered=false, pdfpagemode=UseOutlines, pdftoolbar=true}
+\urlstyle{same}%gleiche Schriftart für den Link wie für den Text
+
+%-----------------------------------
+% Start the document here:
+%-----------------------------------
+\begin{document}
+
+\pagenumbering{Roman}								% Seitennumerierung auf römisch umstellen
+\newcolumntype{C}{>{\centering\arraybackslash}X}	% Neuer Tabellen-Spalten-Typ:
+%Zentriert und umbrechbar
+
+%-----------------------------------
+% Textcommands
+%-----------------------------------
+\input{skripte/textcommands}
+
+%-----------------------------------
+% Titlepage
+%-----------------------------------
+\input{kapitel/titelseite}
+
+%-----------------------------------
+% Vorwort (optional; bei Verwendung beide Zeilen entkommentieren und unter Inhaltsverzeichnis setcounter entsprechend anpassen)
+%-----------------------------------
+%\input{kapitel/vorwort/vorwort}
+%\newpage
+
+%-----------------------------------
+% Inhaltsverzeichnis
+%-----------------------------------
+% Um das Tabellen- und Abbbildungsverzeichnis zu de/aktivieren ganz oben in Documentclass schauen
+\setcounter{page}{2}
+\addtocontents{toc}{\protect\enlargethispage{-20mm}}% Die Zeile sorgt dafür, dass das Inhaltsverzeichnisseite auf die zweite Seite gestreckt wird und somit schick aussieht. Das sollte eigentlich automatisch funktionieren. Wer rausfindet wie, kann das gern ändern.
+\setcounter{tocdepth}{4}
+\tableofcontents
+\newpage
+
+%-----------------------------------
+% Abbildungsverzeichnis
+%-----------------------------------
+\listoffigures
+\newpage
+%-----------------------------------
+% Tabellenverzeichnis - pp2 keine Tabellen vorhanden.
+%-----------------------------------
+\listoftables
+\newpage
+%-----------------------------------
+% Algorithmenverzeichnis
+%-----------------------------------
+
+\newcommand{\algorithmlistnames}{Algorithmenverzeichnis}
+
+\newcommand\entrywithprefixformat[1]{
+	\algorithmname~#1
+}
+
+\DeclareTOCStyleEntry[
+	level=1,
+	indent=1.5em,
+	numwidth=2.3em,
+	entrynumberformat=\entrywithprefixformat,
+	dynnumwidth
+]{tocline}{algorithm}
+
+\renewcommand{\listofalgorithms}{
+	\cleardoublepage
+	\listoftoc{loa}
+}
+\newcommand{\listofloaname}{Algorithmenverzeichnis}
+\listofalgorithms
+\newpage
+%-----------------------------------
+% Abkürzungsverzeichnis
+%-----------------------------------
+% Falls das Abkürzungsverzeichnis nicht im Inhaltsverzeichnis angezeigt werden soll
+% dann folgende Zeile auskommentieren.
+% \addcontentsline{toc}{section}{\abbreHeadingName}
+\input{abkuerzungen/acronyms}
+\newpage
+
+%-----------------------------------
+% Symbolverzeichnis
+%-----------------------------------
+% In Overleaf führt der Einsatz des Symbolverzeichnisses zu einem Fehler, der aber ignoriert werdne kann
+% Falls das Symbolverzeichnis nicht im Inhaltsverzeichnis angezeigt werden soll
+% dann folgende Zeile auskommentieren.
+%\addcontentsline{toc}{section}{\symheadingname}
+%\input{skripte/symbolDef}
+%\listofsymbols
+%\newpage
+
+%-----------------------------------
+% Glossar
+%-----------------------------------
+\printnoidxglossaries
+\newpage
+
+%-----------------------------------
+% Sperrvermerk
+%-----------------------------------
+%\input{kapitel/anhang/sperrvermerk}
+
+%-----------------------------------
+% Seitennummerierung auf arabisch und ab 1 beginnend umstellen
+%-----------------------------------
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%-----------------------------------
+% Kapitel / Inhalte
+%-----------------------------------
+% Die Kapitel werden über folgende Datei eingebunden
+\input{skripte/kapitelUebersicht.tex}
+
+%-----------------------------------
+% Apendix / Anhang
+%-----------------------------------
+
+%-----------------------------------
+% Literaturverzeichnis
+%-----------------------------------
+\newpage
+
+% Die folgende Zeile trägt ALLE Werke aus literatur.bib in das
+% Literaturverzeichnis ein, egal ob sie zietiert wurden oder nicht.
+% Der Befehl ist also nur zum Test der Skripte sinnvoll und muss bei echten
+% Arbeiten entfernt werden.
+%\nocite{*}
+
+%\addcontentsline{toc}{section}{Literatur}
+
+% Die folgenden beiden Befehle würden ab dem Literaturverzeichnis wieder eine
+% römische Seitennummerierung nutzen.
+% Das ist nach dem Leitfaden nicht zu tun. Dort steht nur dass 'sämtliche
+% Verzeichnisse VOR dem Textteil' römisch zu nummerieren sind. (vgl. S. 3)
+%\pagenumbering{Roman} %Zähler wieder römisch ausgeben
+%\setcounter{page}{4}  %Zähler manuell hochsetzen
+
+% Ausgabe des Literaturverzeichnisses
+
+% Keine Trennung der Werke im Literaturverzeichnis nach ihrer Art
+% (Online/nicht-Online)
+%\begin{RaggedRight}
+%\printbibliography
+%\end{RaggedRight}
+
+% Alternative Darstellung, die laut Leitfaden genutzt werden sollte.
+% Dazu die Zeilen auskommentieren und folgenden code verwenden:
+
+% Literaturverzeichnis getrennt nach Nicht-Online-Werken und Online-Werken
+% (Internetquellen).
+% Die Option nottype=online nimmt alles, was kein Online-Werk ist.
+% Die Option heading=bibintoc sorgt dafür, dass das Literaturverzeichnis im
+% Inhaltsverzeichnis steht.
+% Es ist übrigens auch möglich mehrere type- bzw. nottype-Optionen anzugeben, um
+% noch weitere Arten von Zusammenfassungen eines Literaturverzeichnisse zu
+% erzeugen.
+% Beispiel: [type=book,type=article]
+\printbibliography[nottype=online,heading=bibintoc,title={\langde{Literaturverzeichnis}\langen{Bibliography}}]
+
+% neue Seite für Internetquellen-Verzeichnis
+\newpage
+
+% Laut Leitfaden 2018, S. 14, Fussnote 44 stehen die Internetquellen NICHT im
+% Inhaltsverzeichnis, sondern gehören zum Literaturverzeichnis.
+% Die Option heading=bibintoc würde die Internetquelle als eigenen Eintrag im
+% Inhaltsverzeicnis anzeigen.
+%\printbibliography[type=online,heading=bibintoc,title={\headingNameInternetSources}]
+\printbibliography[type=online,heading=subbibliography,title={\headingNameInternetSources}]
+
+\input{kapitel/anhang/erklaerung_timo.tex}
+\input{kapitel/anhang/erklaerung_simon.tex}
+\input{kapitel/anhang/erklaerung_mario.tex}
+
+\end{document}

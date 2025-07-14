@@ -1,0 +1,9 @@
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qitemsize\\E$"}
+{"rule":"GERMAN_SPELLER_RULE","sentence":"^\\QStärken (Strengths) q Schwächen (Weaknesses) w Chancen (Opportunities) w Bedrohungen (Threats) w\\E$"}
+{"rule":"DE_CASE","sentence":"^\\QDie KI kann Arbeitsplätze ablösen, schätzungsweise sind 20-25 Prozent der Plätze betroffen, was den Lernenden Perspektiven nehmen kann \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"ALS_OHNE_KOMPARATIV","sentence":"^\\QIm Verlauf der Ausarbeitung werden positive als auch negative Aspekte die KI in der Bildung betreffen aufgezeigt.\\E$"}
+{"rule":"V_S_KONGRUENZ","sentence":"^\\QZum Schluss wird final ein Skript zu der Spieler-Komponente hinzugefügt, welches die logischen Bedingungen, wie das Leben und die Kommunikation zu anderen Komponenten herstellt.\\E$"}
+{"rule":"DE_CASE","sentence":"^\\QDie Struktur ist in dem folgendem Bild visualisiert: [GameObject Struktur]GameObject Struktur Das PlayerObject kapselt die Visualisierung des Spielecharakters.\\E$"}
+{"rule":"DE_CASE","sentence":"^\\QDie Struktur ist in dem folgenden Bild visualisiert: [GameObject Struktur]GameObject Struktur Der Aufbau der untergeordneten GameObjects wird folgend dargestellt: PlayerObject Bei dem PlayerObject handelt es sich um die Kapselung der Visualisierungsmöglichkeiten für den Spielecharakter.\\E$"}
+{"rule":"DE_AGREEMENT","sentence":"^\\QAls Unterschied dazu, muss die Move Action selbst muss nicht zugeordnet werden, da wegen der Art der benötigten Eingabe ist es notwendig, diesen pro Frame zu überprüfen.\\E$"}
+{"rule":"ART_ADJ_SOL","sentence":"^\\QDie erste User Story beschreibt die Anforderungen an den Spielecharakter aus der Perspektive des Spielers.\\E$"}
