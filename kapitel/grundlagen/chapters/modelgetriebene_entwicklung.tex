@@ -1,0 +1,32 @@
+% 2.1 Modellgetriebene Entwicklung (MDD/MDE)
+\subsection{Modellgetriebene Entwicklung}\label{subsec:mdd}
+
+% Einleitung: Was ist MDD? Ziel: Abstraktion, Automatisierung, Vereinfachung der Kommunikation.
+% Historischer Kontext: Entstehung in den 1990ern als Antwort auf steigende Software-Komplexität.
+
+\subsubsection{Kernelemente und Konzepte}\label{subsubsec:mdd-konzepte}
+
+Die Modellgetriebene Entwicklung (engl. Model-Driven-Development (MDD) oder auch Model-Driven-Engineering (MDE)) ist ein Softwareentwicklungskonzept, dass in den 1990er Jahren an Popularität gewann. Die Idee war es durch den Einsatz von Modellen die zunehmende Komplexität der Softwareentwicklung durch die Abstraktion der einzelnen Entwicklungsschritte zu reduzieren und die Kommunikation zwischen Fachexperten und Entwicklern zu vereinfachen. Mit Transformationen und Generierungstechniken sollte man von Modell zu Modell einen Generierungsprozess anstoßen, der letztlich lauffähigen Code produziert. 
+
+Ein Modell ist eine abstrakte Darstellung eines Systems. Sie werden meist visuell in Form von Diagrammen dargestellt, um komplexe Sachverhalte verständlicher und für mehr Personen zugänglich zu machen. In der Modellgetriebenen Entwicklung erhalten diese Modelle eine zentrale Rolle im Entwicklungsprozess und dienen als primäre Artefakte, aus denen Software abgeleitet wird. 
+
+Ein Modell wird immer durch ein Metamodell beschrieben. Metamodelle definieren die Sprache und Grammatik, in der Modelle erstellt werden. Sie legen fest, welche Elemente und Bausteine in einem Modell verwendet werden können. 
+
+% Kernelemente kurz definieren:
+% - Modell: Abstraktion eines Systems.
+% - Metamodell: Definiert die Sprache/Grammatik für das Modell.
+% - OMG 4-Layer-Architektur: M0 (Instanzen), M1 (Modell), M2 (Metamodell), M3 (Meta-Metamodell, z.B. MOF).
+
+\subsubsection{Realisierungsstrategien: Generierung vs. Interpretation}\label{subsubsec:mdd-strategien}
+
+% Hier die beiden grundlegenden Ansätze gegenüberstellen.
+
+% \paragraph{Der generative Ansatz (Model-to-Text Transformation)}
+% - Konzept: Klassische MDA. PIM -> PSM -> Code-Generierung.
+% - Vor-/Nachteile: Performance, Plattformunabhängigkeit vs. Round-Trip-Problem, Komplexität der Generatoren.
+
+% Interpretive: Metamodel is shipped and interpreted at runtime. Sort of like a blueprint or instruction manual that is shipped and then build at the client side.
+
+% \paragraph{Der interpretative Ansatz (Model Interpretation)}
+% - Konzept: Eine generische Engine führt das Modell zur Laufzeit direkt aus.
+% - Vor-/Nachteile: Flexibilität, Hot-Reloading, WYSIWYG vs. Performance-Overhead, Abhängigkeit von der Engine.
