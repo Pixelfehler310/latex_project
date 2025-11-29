@@ -6,27 +6,49 @@
 
 \subsubsection{Kernelemente und Konzepte}\label{subsubsec:mdd-konzepte}
 
-Die Modellgetriebene Entwicklung (engl. Model-Driven-Development (MDD) oder auch Model-Driven-Engineering (MDE)) ist ein Softwareentwicklungskonzept, dass in den 1990er Jahren an Popularität gewann. Die Idee war es durch den Einsatz von Modellen die zunehmende Komplexität der Softwareentwicklung durch die Abstraktion der einzelnen Entwicklungsschritte zu reduzieren und die Kommunikation zwischen Fachexperten und Entwicklern zu vereinfachen. Mit Transformationen und Generierungstechniken sollte man von Modell zu Modell einen Generierungsprozess anstoßen, der letztlich lauffähigen Code produziert. 
+Die moderne Softwareentwicklung erwartet von den Entwicklungsteams, dass sie komplexe Systeme in kürzester Zeit abbilden und umsetzen können.
+Die klassische Programmierung kann den zeitlichen und qualitativen Anforderungen des agilen Marktes oft nicht mehr gerecht werden. Aus diesem Problem heraus entstand in den 1990er Jahren das Konzept der Modellgetriebenen Entwicklung (engl. Model-Driven-Development (MDD) oder auch Model-Driven-Engineering (MDE)). Die Idee war es mithilfe von Modellen die zunehmende Komplexität der Softwareentwicklung durch die Abstraktion der einzelnen Entwicklungsschritte zu reduzieren und die Kommunikation zwischen Fachexperten und Entwicklern zu vereinfachen. Mit Transformationen und Generierungstechniken sollte man von Modell zu Modell einen Transformationsprozess anstoßen, der letztlich aus einem Modell lauffähigen Code produziert. 
+
+In der Modellgetriebenen Entwicklung rücken statt dem Quellcode die Modelle in den Fokus der Entwicklung. Das Modell dient ist nicht wie bei der klassischen Programmierung eine bloße Dokumentation des Systems, sondern eine formale, maschinenlesbare Repräsentation des Systems. In dem Modell werden die Struktur, das Verhalten und die Anforderungen des Systems beschrieben, ohne sich dabei auf eine konkrete Implementierung festzulegen.
 
 Ein Modell ist eine abstrakte Darstellung eines Systems. Sie werden meist visuell in Form von Diagrammen dargestellt, um komplexe Sachverhalte verständlicher und für mehr Personen zugänglich zu machen. In der Modellgetriebenen Entwicklung erhalten diese Modelle eine zentrale Rolle im Entwicklungsprozess und dienen als primäre Artefakte, aus denen Software abgeleitet wird. 
 
-Ein Modell wird immer durch ein Metamodell beschrieben. Metamodelle definieren die Sprache und Grammatik, in der Modelle erstellt werden. Sie legen fest, welche Elemente und Bausteine in einem Modell verwendet werden können. 
+Ein Modell wird immer durch ein Metamodell beschrieben. Metamodelle definieren die Sprache und Grammatik, in der Modelle erstellt werden. Sie legen fest, welche Elemente und Bausteine in einem Modell verwendet werden können.
 
-% Kernelemente kurz definieren:
-% - Modell: Abstraktion eines Systems.
-% - Metamodell: Definiert die Sprache/Grammatik für das Modell.
-% - OMG 4-Layer-Architektur: M0 (Instanzen), M1 (Modell), M2 (Metamodell), M3 (Meta-Metamodell, z.B. MOF).
+Viele Modelle in der Modellgetriebenen Entwicklung werden mithilfe von Domänenspezifische Sprachen (Domain-Specific Languages, DSLs) abgebildet. Diese sind speziell auf die Anforderungen und Konzepte einer bestimmten Anwendungsdomäne zugeschnitten und ermöglichen es, Modelle zu erstellen, die für Fachexperten verständlich sind und gleichzeitig präzise genug, um automatisierte Transformationen und Code-Generierung zu ermöglichen.
+
+Der Entwicklungsprozess in MDD wird durch Modelle und Metamodelle strukturiert. Ein Modell selbst ist, wie auch der daraus generierte Quellcode oder die Dokumentation, ein Produkt des Entwicklungsprozesses, in MDD auch Artefakt genannt. Der gesamte MDD-Prozess lässt sich als eine Kette von Transformationen beschreiben, bei der aus einem Artefakt (zum Beispiel einem Modell) ein anderes Artefakt (zum Beispiel Quellcode) abgeleitet wird. 
+
+Transformatoren und Generatoren sind Werkzeuge, die den Übergang von einem Artefakt zu einem anderen ermöglichen. 
+
+Transformatoren lesen ein oder mehr Quellartefakte ein und wandeln diese in ein neues Artefakt um. Dies kann durch Filterung Umstrukturierung oder Anreicherung des zugrunde liegenden Modells geschehen, aber auch einen internen Interpretations und Neugenerierungsprozess beinhalten.
+% Quelle Finden !!!
+Neben Transformatoren gibt es auch Generatoren, die speziell darauf ausgelegt sind, aus einem Modell ausführbaren Code oder textuelle Modellrepräsentationen zu erzeugen. 
+
+Eine wichtige Rolle bei modellgetriebener Entwicklung spielt die Domäne. Die Domäne umfasst das Fachwissen und die spezifischen Anforderungen des Anwendungsbereichs. Aus diesen geht oft die Entscheidung der Modelltypen und Programmiersprachen hervor. Um ein Problem oder eine Anforderung in der Domäne möglichst präzise abzubilden können Domänenspezifische Sprachen (DSLs) entwickelt und genutzt werden. DSLs sind speziell auf die Konzepte und Anforderungen einer bestimmten Domäne zugeschnittene Sprachen, die es ermöglichen, Modelle zu erstellen, die sowohl für Fachexperten als auch für Entwickler verständlich sind. Durch die Verwendung von DSLs können Modelle präziser und aussagekräftiger gestaltet werden, was die Kommunikation zwischen den verschiedenen Beteiligten im Entwicklungsprozess verbessert und die Qualität der resultierenden Software erhöht. Sie können sowohl visuell (zum Beispiel UML-Diagramme) als auch textuell (zum Beispiel auf Basis von XML oder JSON) sein. 
+
+% Beispiel Modell transformationsprozess, Mit Modell, Meta Modell, Domäne und DSL und letzlichen Programmcode (bestenfalls HTML oder JavaScript oder Python oder so)
+
+% MtM und MtT und MtC
+% Model to Model (MtM), Model to Text (MtT), Model to Code (MtC)
+% Quelle Finden !!!
+% TODO Einleiten in nächstes Kapitel
 
 \subsubsection{Realisierungsstrategien: Generierung vs. Interpretation}\label{subsubsec:mdd-strategien}
 
-% Hier die beiden grundlegenden Ansätze gegenüberstellen.
+In MDD wird klassischerweise meist der generative Ansatz verfolgt, bei dem Modelle in mehreren Schritten in ausführbaren Quellcode umgewandelt werden. Einen Standard für diesen Ansatz wurde von der Object Management Group (OMG) definiert und wird als Model-Driven Architecture (MDA) bezeichnet. Dieser umfasst typischerweise die Transformation von Plattformunabhängigen Modellen (PIM) zu Plattformabhängigen Modellen (PSM) und schließlich zur Code-Generierung. Dieser Ansatz hat den Vorteil, dass er eine klare Trennung zwischen der Modellierung und der Implementierung ermöglicht, was die Wartbarkeit und Wiederverwendbarkeit der Modelle verbessert. Allerdings kann die Komplexität der Transformationsprozesse und die Notwendigkeit spezialisierter Werkzeuge Herausforderungen mit sich bringen. 
+Durch seine festgesetzten und unflexiblen Transformationsschritte und Modellstrukturen ist man mit dem MDA-Standard möglicherweise nicht in der Lage, auf spezifische Anforderungen und Dynamiken moderner Softwareprojekte flexibel zu reagieren. Außerdem ist durch die hohe Standardisierung der anfängliche Aufwand zur Einarbeitung und Implementierung von MDA-Prozessen in ein Projekt oft sehr hoch.
+% Quelle Finden !!!
 
-% \paragraph{Der generative Ansatz (Model-to-Text Transformation)}
-% - Konzept: Klassische MDA. PIM -> PSM -> Code-Generierung.
-% - Vor-/Nachteile: Performance, Plattformunabhängigkeit vs. Round-Trip-Problem, Komplexität der Generatoren.
+In den letzten Jahren haben sich daher neben dem etablierten generativen Ansatz auch andere Realisierungsstrategien entwickelt, die versuchen, die Flexibilität und Anpassungsfähigkeit der modellgetriebenen Entwicklung zu erhöhen, um mit den dynamischen Anforderungen moderner Softwareprojekte wie ERP-Systemen oder Webanwendungen besser umgehen zu können. 
 
-% Interpretive: Metamodel is shipped and interpreted at runtime. Sort of like a blueprint or instruction manual that is shipped and then build at the client side.
+Ein hochflexibler Ansatz ist der interpretative Ansatz, bei dem Modelle nicht in Code generiert werden, sondern zur Laufzeit interpretiert und ausgeführt werden. Dabei wird das Modell als Meta-Daten-Definition der Anwendung zusammen mit einer generischen Laufzeitumgebung, der Engine, bereitgestellt. Die Engine parst und interpretiert das Modell direkt und produziert dann eine den Meta-Daten entsprechende Anwendung daraus. Im Kontrast zu generativen Ansätzen passiert die Modellanalyse hier zur Laufzeit anstatt schon zur Compile- / Build-Zeit. Dies ermöglicht eine höhere Flexibilität, da Änderungen am Modell sofort wirksam und sichtbar werden können, ohne dass eine erneute Code-Generierung und -Kompilierung erforderlich ist. Auch die Time-To-Market und die Individualisierbarkeit kann durch die hohe Anpassbarkeit verbessert werden. Allerdings kann dieser Ansatz auch Performance-Einbußen mit sich bringen, da die Interpretation zur Laufzeit zusätzlichen Overhead verursacht. Mit diesem Prinzip werden Ideen wie Models@Runtime (M@RT), oder Model-Based-User-Interface-Development (MBUID) häufig umgesetzt. Es wird oft auch interpretative MDD oder Model Interpretation genannt, da auch hier die Modelle wichtige Artefakte im Entwicklungsprozess sind. 
 
-% \paragraph{Der interpretative Ansatz (Model Interpretation)}
-% - Konzept: Eine generische Engine führt das Modell zur Laufzeit direkt aus.
-% - Vor-/Nachteile: Flexibilität, Hot-Reloading, WYSIWYG vs. Performance-Overhead, Abhängigkeit von der Engine.
+
+% Quelle Finden !!!
+
+% Aus der Literaturanalyse von XY geht hervor, dass interpretative MDD die und die Vorteile hat, generative MDD aber die und die Vorteile hat. 
+
+% TODO Quellen annotieren
+% ! TODO Inhalt: Generator ist ein Typ eines Transformators, nicht entweder oder, Also stattdessen Transformatortypen erklären pls.
+% TODO Leseflow und Roten Faden Kapitel intern verbessern
