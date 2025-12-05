@@ -1,0 +1,164 @@
+% 2.3 Human-Centered Design (HCD) und Usability
+\subsection{Human-Centered Design (HCD) und Usability}\label{subsec:hcd-usability}
+
+% todo: Ja, das kann grundsätzlich HCD sein – wenn bestimmte Bedingungen eingehalten werden. Aber: Dein Beispiel ist eher „lightweight HCD“ oder „User-informed Design“, nicht der vollständige, formal definierte HCD-Prozess nach ISO 9241-210.
+% todo also noch User Informed Design ergänzen, / den unterschied erklären!!!
+% ! Potenzielle Lücken: Ist beim Designer wirklich ein Tiefes Nutzungsverständnis vorhanden? ; ist die repräsentative Gruppe wirklich nah an den Endnutzern? ; Wo Evaluation gegen Nutzungskontext???
+
+
+
+% Einleitung:
+% - Definition HCD (ISO 9241-210): Prozess, der den Menschen in den Mittelpunkt stellt.
+% - Ziel: Gebrauchstaugliche (usable) und nützliche (useful) Systeme schaffen.
+% - Abgrenzung zu Usability: HCD ist der Prozess, Usability ein Qualitätsmerkmal.
+
+% todo Einleitungssatz schreiben // Human Centered Design, User Experience und Usability sind bEgriffe die die Softwareentwicklung und das Interaktionsdesign schon seit Jahren prägen. ...
+
+Human-Centered Design (HCD) ist ein Ansatz zur Gestaltung und Entwicklung interaktiver Systeme, bei dem der Mensch in den Mittelpunkt gestellt wird. Das Ziel ist es, die Bedienbarkeit der Systeme schon im Entwicklungsprozess zu verbessern, indem Wissen über die Nutzer, ihre Aufgaben und die Umgebung systematisch analysiert und einbezogen wird. (ISO 9241-210, p2,2.7). Das Ergebnis eines auf HCD basierenden Entwicklungsprozesses sind bestenfalls Systeme, die eine hohe Usability aufweisen, also Systeme, die effektiv, effizient und zufriedenstellend von den Nutzern verwendet werden können (ISO 9241-210, p3, 2.13). 
+
+Gute Usability und die Nutzung von HCD-Prinzipien können helfen die Akzeptanz und Zufriedenheit der Nutzer zu erhöhen, die Produktivität zu steigern und Fehler zu reduzieren. Außerdem können sie die Trainings und Supportkosten senken, da Systeme intuitiver und leichter zu erlernen sind. Weniger Frustration bei der Nutzung durch gutes Design führt zudem zu einer positiveren Wahrnehmung des Produkts und der Marke.
+
+Die ISO Norm 9241-210:2010 beschreibt sechs Grundprinzipien des Human-Centered-Design-Prozesses.
+1. Der Entwurf basiert auf einem klaren Verständnis der Nutzer, deren Aufgaben und der Nutzungsumgebung.
+2. Die Nutzer werden aktiv in den Entwurfs- und Entwicklungsprozess einbezogen.
+3. Der Entwurf wird iterativ entwickelt.
+4. Alle Aspekte der User Experience werden berücksichtigt.
+5. Das Design wird von einem Team erstellt, das diversifizierte Fähigkeiten und Perspektiven mitbringt. % todo den Satz kann man verbessern % todo ggf ausführen welche Fähigkeiten es braucht
+% src: ISO 9241-210 p5
+
+Ein beispielhafter HCD-Prozess könnte in etwa so aussehen: % todo Beispiel ausfeilen
+Zunächst muss man analysieren und verstehen, wer die Nutzer sind, welche Aufgaben sie erledigen müssen und in welchem Kontext sie das System verwenden. Basierend auf diesem Verständnis werden Anforderungen definiert, die das Design leiten.
+Anschließend werden erste Entwürfe entwickelt, die diese Anforderungen erfüllen. Der frühe Entwurf wird dann bereits an die User kommuniziert um Feedback einzuholen. Dieser Schritt nennt sich Validierung des Designs. Das frühe Einbinden der Nutzer in den Prozess ermöglicht es, aufkommende Probleme frühzeitig erkennen und beheben zu können.
+Mithilfe des User-Feedbacks wird das Produkt dann angepasst und verbessert. 
+
+% fig Prozessbeispiel
+
+Diese Schritte werden mehrfach durchlaufen und so wird das System kontinuierlich besser. Aufgrund dieser iterativen Struktur sind Agile Entwicklungsmethoden gut geeignet, um HCD-Prinzipien umzusetzen. 
+
+% todo ROI erklären, also warum sich HCD lohnt
+
+Die Evaluation der Usability und der User Experience ist ein wichtiger Bestandteil des HCD-Prozesses. Doch um bewerten zu können, ob ein System eine gute User Experience oder Usability aufweist, muss man zunächst verstehen, was diese Begriffe bedeuten und wie sie gemessen werden können. 
+
+\subsubsection{Gestaltungsprinzipien für interaktive Systeme}\label{subsubsec:gestaltungsprinzipien}
+Don Norman beschreibt in seinem Buch "The Design of Everyday Things" sechs psychologische Konzepte, deren Verständnis für gutes Design unerlässlich ist, da sie erklären, wie Nutzer mit Objekten interagieren und wie sie diese wahrnehmen. % todo Anführungszeichen prüfen
+
+% ? Vllt so ein Satz: Im Originalwerk beziehen sich die Konzepte auf Alltagsgegenstände. Sie gelten aber ebenso gut für interaktive Systeme und Software, daher werden sie hier auf Systeme bezogen
+
+
+% todo Nutzer == User, einmal einheitlich machen am besten (ich mag ja user lieber)
+
+Das erste Konzept beschreibt Affordances. Affordances sind Eigenschaften eines Systems, die Repräsentieren, was der User er tun kann, also Interaktionsangebote. % src: DOET p 27
+
+Interaktionsangebote sind nicht immer offensichtlich. Wenn ein Objekt eine Affordance besitzt, bedeutet das nicht automatisch, dass der User diese auch wahrnimmt. Wenn dem User die Interaktionsmöglichkeit nicht klar ist, kann er sie auch nicht nutzen. Daher gibt es Signifiers. 
+
+Signifiers sind Hinweise oder Markierungen, die dem User zeigen, dass und wie er mit einem Objekt interagieren kann. % todo Satz verbessern
+
+% todo Contraints, s. DOET Chapter 3 und 4
+
+Das zweite Konzept sind Signifiers, also Hinweise oder Markierungen, die dem User zeigen, wo und wie er mit einem Objekt interagieren kann.% src: DOET p 28 
+Sie sollen dem Nutzer kommunizieren, was der Zweck, der Aufbau und die Funktionsweise eines Objekts ist. % src: DOET p 30
+Ein Beispiel hierfür ist ein Pfeil auf einem Knopf, der anzeigt, dass dieser gedrückt werden kann, oder der Cursor der sich ändert, wenn er über einem Link hovert.
+
+Das dritte Konzept ist Mapping. Mapping beschreibt die Beziehung zwischen den Steuerelementen eines Systems und den Aktionen, die sie auslösen. % src: DOET p 37
+Gutes Mapping bedeutet, dass die Anordnung der Steuerelemente intuitiv und logisch ist, sodass der User leicht verstehen kann, welche Steuerung welche Aktion auslöst. % src: DOET p 38
+
+Das vierte Konzept ist Feedback. Feedback ist die unmittelbare Rückmeldung % src: DOET p 40
+, die ein System dem User gibt, um ihn über den aktuellen Zustand oder die Ergebnisse seiner Aktionen zu informieren. % src: DOET p 40
+
+Feedback ist entscheidend, damit der User versteht, was im System passiert, und um ihm Sicherheit bei der Interaktion zu geben. Dauert Feedback zu lange oder fehlt es ganz, kann der User verwirrt werden und Fehler machen. % src: DOET p 41
+
+Außerdem muss Feedback geplant und priorisiert werden, da auch zu viel oder unnötiges Feedback den User überfordern, ablenken und verwirren kann. % src: DOET p 41 
+
+Das fünfte Konzept ist das Conceptual Model. Ein Conceptual Model ist eine mentale Repräsentation, die der User von einem System entwickelt, basierend auf seinen Erfahrungen, seinem Wissen und den Informationen, die das System bereitstellt, über die Funktionsweise des Systems % src: DOET p 42 % todo Satz verbessern
+Oft entstehen diese Modelle durch das Lernen des Systems durch Interaktion und Ausprobieren, durch den Informationstransfer von Person zu Person, oder durch das Lesen von Dokumentationen oder ähnlichen Systembeschreibungen. % src: DOET p 43
+
+
+% todo Software Beispiele für alle fünf Prinzipien am besten in einem Software System
+
+
+% Hier die wichtigsten Prinzipien als Grundlage für gutes Interaktionsdesign vorstellen.
+
+Aus den oben genannten psychologischen Konzepten lassen sich grundlegende Designprinzipien ableiten, die in der DIN EN ISO 9241-110 als sieben Dialogprinzipien für die Gestaltung interaktiver Systeme festgeschrieben sind. Diese Prinzipien dienen im allgemeinen als Kontrollsätze für Experten und Leitfaden zur Oberflächengestaltung. Sie weisen starke Parallelen zu Normans Konzepten auf.
+
+Ein zentraler Aspekt ist die Aufgabenangemessenheit, die fordert, dass ein System den Nutzer effektiv und effizient bei der Erledigung seiner Aufgaben unterstützt, ohne unnötige Barrieren aufzubauen. 
+
+Eng damit verbunden ist die Selbstbeschreibungsfähigkeit, die sicherstellt, dass dem Nutzer zu jeder Zeit klar ist, in welchem Zustand sich das System befindet und welche Schritte als nächstes erwartet werden. Dies korrespondiert direkt mit dem Einsatz von Signifiers und Feedback zum Bilden des Conceptual Models der Nutzer. So wird die Bedienung des Systems transparenter und verständlicher.
+
+Des Weiteren wird Erwartungskonformität gefordert, was bedeutet, dass sich das System konsistent verhalten und den mentalen Conceptual Models der Nutzer entsprechen sollte. Wenn das Mapping und die Abläufe den Erfahrungen aus der physischen Welt oder bekannten Anwendungen gleichen, finden sich Nutzer schneller zurecht.
+
+Dies trägt auch zur Lernförderlichkeit bei, da klare Affordances und verständliches Feedback dem Nutzer helfen, schnell ein korrektes Conceptual Modell aufzubauen und das System sicher zu bedienen. % todo Quelle finden
+
+Ein weiteres Prinzip ist die Steuerbarkeit, die dem Nutzer die Kontrolle über den Dialog überlässt, sodass Prozesse gestartet, unterbrochen oder in ihrer Geschwindigkeit angepasst werden können.
+
+Da trotz guten Designs Fehler auftreten können, ist Fehlertoleranz essenziell. Ein System nach DIN EN ISO 9241-110 fängt fehlerhafte Eingaben ab oder ermöglicht eine einfache Korrektur, ohne dass Arbeitsergebnisse verloren gehen.
+
+Schließlich fordert die Norm Individualisierbarkeit, um das System an unterschiedliche Voraussetzungen und Vorlieben der Nutzer anpassen zu können und so den spezifischen Nutzungskontext zu berücksichtigen. Dazu gehört zum Beipsiel die Barrierefreiheit und ein Dark Mode. (vgl. DIN EN ISO 9241-110, 2008, S. 8ff.).
+
+% \paragraph{Grundlegende Designprinzipien}
+% - Sichtbarkeit (Visibility): Was kann ich tun?
+% - Rückmeldung (Feedback): Was ist passiert?
+% - Konsistenz (Consistency): Gleiche Dinge sollten gleich aussehen und funktionieren.
+% - Affordances & Signifiers: Was ein Objekt kann (Affordance) und wie das kommuniziert wird (Signifier).
+
+\subsubsection{Methoden der Usability-Evaluation}\label{subsubsec:usability-methoden} % todo Mehr quellen recherchieren und quellen nochmal checken
+
+Die Usability-Evaluation ist ein zentraler Bestandteil des Human-Centered-Design Prozesses. Sie dient dazu, die Gebrauchstauglichkeit eines Systems zu bewerten und sicherzustellen, dass es den Bedürfnissen und Erwartungen der Nutzer entspricht.
+
+Grundsätzlich lassen sich Evaluationsmethoden nach ihrem Ziel und Zeitpunkt in formative und summative Evaluation unterteilen.
+
+Die formative Evaluation findet begleitend während des Entwicklungsprozesses statt. Sie ist meist qualitativ ausgerichtet und fragt, was falsch läuft und warum. Ihr primäres Ziel ist es, Schwachstellen und Usability-Probleme frühzeitig zu identifizieren, um das Design noch während der Entwicklung iterativ zu verbessern und Fehlentwicklungen zu vermeiden. % src: vgl. Nielsen, 1993 - https://doi.org/10.1016/C2009-0-21512-1 // ! Not Accessible
+% ! Not Accessible
+
+Die summative Evaluation hingegen erfolgt meist am Ende eines Entwicklungszyklus. Sie ist oft quantitativ geprägt und beantwortet die Frage, wie gut das System ist. Sie dient dazu, die abschließende Qualität des Systems anhand definierter Metriken zu bewerten, oft im Vergleich zu Vorgängerversionen oder Wettbewerbsprodukten, um beispielsweise eine Entscheidung über die Produktfreigabe zu treffen. % src: vgl. Scriven, 1967 - https://www.worldcat.org/title/perspectives-of-curriculum-evaluation/oclc/438606
+% ! Not Accessible
+
+Eine weitere Unterscheidung erfolgt zwischen qualitativen und quantitativen Methoden. Qualitative Methoden dienen dem Verständnis von Nutzungsproblemen, während quantitative Methoden messbare Metriken liefern. Einfach gesagt erforschen Qualitative Methoden erforschen die Gründe aus denen Fehler passieren und quantitative Methoden haben das Ziel herauszufinden wie häufig Nutzungsprobleme auftreten.  % src: vgl. Nielsen, 2004 - https://www.nngroup.com/articles/risks-of-quantitative-studies/
+
+\paragraph{Qualitative Methoden}
+Eine der bekanntesten qualitativen Methoden ist die Thinking-Aloud-Methode. Hierbei werden Nutzer gebeten, während der Bearbeitung von Aufgaben ihre Gedanken laut auszusprechen. Dies ermöglicht Einblicke in kognitive Prozesse und Missverständnisse, die durch reine Beobachtung nicht erkennbar wären. %  ~ vgl. Ericsson & Simon, 1980 - https://doi.org/10.1037/0033-295X.87.3.215
+% ! Not Accessible
+
+\paragraph{Inspektionsmethoden}
+Bei Inspektionsmethoden prüfen Usability-Experten das System, ohne dass Endnutzer direkt involviert sind.
+Der Cognitive Walkthrough fokussiert sich auf die Erlernbarkeit des Systems. Experten simulieren schrittweise die Interaktion eines Nutzers und prüfen an jedem Schritt, ob der Nutzer die richtige Handlung erkennen und ausführen kann. %  ~ vgl. Polson et al., 1992 - https://doi.org/10.1016/0020-7373(92)90039-N ; Wharton et al., 1994 - https://dl.acm.org/doi/10.5555/189200.189218
+% ! Anmeldung erforderlich
+
+Die Heuristische Evaluation prüft das System gegen anerkannte Gestaltungsregeln, so genannten Heuristiken, wie etwa die 10 Usability-Heuristiken von Nielsen, Shneidermans Designprinzipien oder die Dialogprinzipien der ISO 9241-110. % src: vgl. Nielsen & Molich, 1990 - https://doi.org/10.1145/97243.97281
+% todo Add Shneidermans Heutistics & Nielsen 10 Heuristics references & ISO 9241-110 reference
+% todo modernen Counterpart finden
+
+\paragraph{Quantitative Methoden und Fragebögen}
+Zur standardisierten Messung der Usability werden häufig Fragebögen eingesetzt.
+Die System Usability Scale (SUS) ist ein weit verbreiteter Quick-and-Dirty-Fragebogen mit 10 Fragen, der einen globalen Usability-Score liefert. % src: vgl. Brooke, 1996 - https://usabilitygeek.com/sus-system-usability-scale/
+Für eine differenzierte Betrachtung der User Experience eignet sich der User Experience Questionnaire (UEQ), der neben der pragmatischen Qualität (Effizienz, Steuerbarkeit) auch hedonische Qualitäten (Stimulation, Identität) misst. % src: vgl. Laugwitz et al., 2008 - https://doi.org/10.1007/978-3-540-89350-9_6
+Ähnlich arbeitet der AttrakDiff, der ebenfalls pragmatische und hedonische Qualität unterscheidet. % src: vgl. Hassenzahl et al., 2003 - https://doi.org/10.1007/978-3-322-80058-9_19
+Der ISONORM 9241/110-S hingegen operationalisiert die sieben Dialogprinzipien der ISO-Norm in Fragebogenform. % src: vgl. Prümper, 1997 - https://dl.gi.de/handle/20.500.12116/26535 
+
+
+
+% Überblick über Methoden, um die Usability eines Systems zu bewerten.
+% Unterscheidung: Formative (während der Entwicklung) vs. summative (am Ende) Evaluation.
+
+% \paragraph{Qualitative Methoden (Verstehen des "Warum")}
+% - Thinking Aloud: Nutzer verbalisieren ihre Gedanken bei der Nutzung.
+% - Cognitive Walkthrough: Experten simulieren den Weg eines Nutzers durch eine Aufgabe.
+
+% \paragraph{Quantitative Methoden (Messen der Usability)}
+% - System Usability Scale (SUS): Fragebogen zur schnellen, quantitativen Bewertung.
+
+% \paragraph{Expertenbasierte Methoden}
+% - Heuristische Evaluation: Experten prüfen das System anhand etablierter Heuristiken (z.B. von Nielsen).
+
+% Aus Methoden der Usability Evaluation von Sarodnick und Brau
+
+% Inspektionsmethoden 142
+% 4.3.1 Heuristische Evaluation / Experten-Evaluation 144
+% 4.3.2 Walkthrough-Verfahren (Cognitive Walkthrough) 151 
+
+% Induktive und deduktive Usability-Tests 
+
+% Fragebogen zur Usability-Messung
+% User Experience Questionnaire (UEQ
+% AttrakDiff
+% Questionnaire for User Interface Satisfaction (QUIS)
+% ISONORM 9241/110-S
