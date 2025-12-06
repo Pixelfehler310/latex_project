@@ -29,7 +29,7 @@
 > **Inhalt:**
 >
 > - **Aus 2.1.1 ableitbare Designprinzipien**
-> - **kognitive zusammenfassung der wichtigsten Heuristiken, mit Fokus auf ISO NORM 9241:210:2010**: (Additiv und als BOnus quellen: Norman, Shneiderman, Nielsen, Honeycomb)
+> - **kognitive zusammenfassung der wichtigsten Heuristiken, mit Fokus auf ISO NORM 9241:210:2010**: (Additiv und als Bonus quellen: Norman, Shneiderman, Nielsen, Honeycomb)
 > - **Feedback & Feedforward**: Nutzerführung.
 > - **Konsistenz**: Erwartungskonformität.
 >   Dialoggestaltungs prinzipien (9241-110)

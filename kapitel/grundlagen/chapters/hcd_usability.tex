@@ -13,17 +13,57 @@
 % > - **Definitionen Usability & User Experience** (ISO 9241-11, ISO 9241-210 und weitere finden)
 % > - Reihenfolge Variabel!
 
+Softwaresysteme werden in der heutigen Welt immer komplexer. Um die Kunden zu überzeugen werden immer mehr Features und Funktionalitäten integriert. Dies führt jedoch oft dazu, dass die Bedienung dieser Systeme für die Nutzer zunehmend schwieriger und unübersichtlicher wird. % src: The Invisible Computer, Norman 1998, p.79
+Diese Faktoren werden von der Digitalisierung und der zunehmenden Vernetzung und Automatisierung weiter verstärkt. % nosrc
+Komplexer werdende Systeme führen häufig zu einer erhöhten kognitiven Last für die Nutzer. Sie müssen sich mehr Abläufe, Funktionen, Bedienmöglichkeiten und Shortcuts merken. Das Problem dabei: Der Mensch hat nur eine begrenzte Kapazität im Arbeitsgedächtnis, um Informationen zu verarbeiten und zu speichern. % verify in: Cognitive Load Theory, Sweller 1988 % nosrc
+Wenn die kognitive Last zu hoch wird und das Arbeitsgedächtnis des Nutzers überfordert ist, steigt die Wahrscheinlichkeit für Fehler bei der Bedienung des Systems. Nutzer übersehen wichtige Funktionen, vergessen Abläufe, verklicken sich, oder treffen falsche Entscheidungen. Dies führt zu Frustration, Unzufriedenheit und letztlich zur Ablehnung des Systems. % nosrc
+
+Donald (Don) Norman, Professor für Kognitionswissenschaften und Design, hat in seinen Büchern The Design of Everyday Things und The Invisible Computer die wesentlichen psychologischen Vorgänge im menschlichen Gehirn bei der Nutzung von Systemen analysiert und Ansätze vorgestellt die Nutzbarkeit der Systeme zu verbessern und die kognitive Last für die Nutzer zu reduzieren. 
+Norman beschreibt 6 psychologische Konzepte, die bei der Gestaltung von benutzerfreundlichen Systemen berücksichtigt werden sollten.
+Dazu gehören unter anderem Affordances, Signifiers, Mapping, Feedback, Constraints und das Conceptual Model. % src: The Design of Everyday Things, Norman 2013; The Invisible Computer, Norman 1998
+
+Affordances sind Eigenschaften eines Systems, die Repräsentieren, was der User er tun kann, also Interaktionsangebote. % src: DOET p 27
+
+Interaktionsangebote sind nicht immer offensichtlich. Eine Affordance bedeutet nicht automatisch, dass der Nutzer sie wahrnimmt. Bleibt die Interaktionsmöglichkeit unklar, kann sie nicht genutzt werden. Hier kommen Signifiers ins Spiel: Hinweise oder Markierungen, die dem Nutzer die Interaktionsmöglichkeit, sowie deren Ausführung verdeutlichen. % src: DOET p 27-28
+
+Sie sollen dem Nutzer kommunizieren, was der Zweck, der Aufbau und die Funktionsweise eines Objekts ist. % src: DOET p 30
+Ein Signifier kann zum Beispiel ein Label auf einem Knopf sein, das suggeriert, was passiert, wenn dieser gedrückt wird, oder der Cursor der sich zum Pointer ändert, wenn er über einem Link hovert.
+
+Eng verwandt mit den Signifiers sind Constraints. Anstatt zu zeigen was möglich ist, zeigen Constraints dem Nutzer was explizit nicht möglich ist.
+Constraints begrenzen die möglichen Interaktionen, um Fehler zu vermeiden und die Bedienung zu leiten. Norman unterscheidet dabei zwischen physischen, kulturellen, semantischen und logischen Constraints. % src: DOET p p 128
+Im Kontext von grafischen Benutzeroberflächen sind vor allem logische Constraints von Bedeutung. Sie nutzen das logische Verständnis des Nutzers über die Funktionsweise des Systems, um nur sinnvolle Aktionen zuzulassen. % src: DOET p 133
+Ein klassisches Beispiel ist ein ausgegrauter (deaktivierter) Button in einem Formular, solange Pflichtfelder nicht ausgefüllt sind. Der Nutzer wird so aktiv daran gehindert, unvollständige Daten abzusenden, die zu Fehlern führen würden.
+
+Das dritte Konzept ist Mapping. Mapping beschreibt die Beziehung zwischen den Steuerelementen eines Systems und den Aktionen, die sie auslösen. % src: DOET p 37
+Gutes Mapping bedeutet, dass die Anordnung der Steuerelemente intuitiv und logisch ist, sodass der User leicht verstehen kann, welche Steuerung welche Aktion auslöst. % src: DOET p 38
+
+% todo Beispiel für Mapping
+
+Feedback ist ein weiteres wichtiges Konzept. Es beschreibt die Rückmeldung, die ein System dem Nutzer gibt, nachdem eine Aktion ausgeführt wurde. % src: DOET p 40
+Feedback informiert den Nutzer über den aktuellen Zustand des Systems oder die Ergebnisse seiner Aktionen. % src: DOET p 40
+
+Feedback ist entscheidend, damit der User versteht, was im System passiert, und um ihm Sicherheit bei der Interaktion zu geben. Dauert Feedback zu lange oder fehlt es ganz, kann der User verwirrt werden und Fehler machen. % src: DOET p 41
+Außerdem muss Feedback geplant und priorisiert werden, da auch zu viel oder unnötiges Feedback den User überfordern, ablenken und verwirren kann. % src: DOET p 41 
+Dies kann in verschiedenen Formen geschehen, wie visuelle Hinweise, akustische Signale oder haptische Rückmeldungen. % nosrc
+
+Das fünfte Konzept ist das Conceptual Model. Ein Conceptual Model ist eine mentale Repräsentation, die der User von einem System entwickelt, basierend auf seinen Erfahrungen, seinem Wissen und den Informationen, die das System bereitstellt, über die Funktionsweise des Systems % src: DOET p 42   
+% todo Satz verbessern
+Oft entstehen diese Modelle durch das Lernen des Systems durch Interaktion und Ausprobieren, durch den Informationstransfer von Person zu Person, oder durch das Lesen von Dokumentationen oder ähnlichen Systembeschreibungen. % src: DOET p 43
+
+% todo Feed-Forward
+
+
+
+
+% todo Beispiel für die psychologischen Konzepte einfügen (Affordances, Signifiers, Mapping, Feedback, Constraints, Conceptual Model)
+
+
 % #### 2.1.2 Human Centered Design (HCD) Prinzipien
 \subsubsection{Human Centered Design (HCD) Prinzipien}\label{subsubsec:hcd-prinzipien}
 
 % * **Inhalt:**
-% > - **Aus 2.1.1 ableitbare Designprinzipien**
-% > - **kognitive zusammenfassung der wichtigsten Heuristiken, mit Fokus auf ISO NORM 9241:210:2010**: (Additiv und als BOnus quellen: Norman, Shneiderman, Nielsen, Honeycomb)
-% > - **Feedback & Feedforward**: Nutzerführung.
-% > - **Konsistenz**: Erwartungskonformität.
-% >   Dialoggestaltungs prinzipien (9241-110)
-% > - explizit NICHT hier drin: Direkte und indirekte Manipulation und WYSIWYG (kommt in 2.3.1)
-
+%  > Der HCD Prozess mit seinen vier Phasen (Verstehen und Spezifizieren des Nutzungskontextes, Spezifizieren der Nutzungsanforderungen, Gestalten der Lösung, Evaluieren der Lösung) wird vorgestellt. Der Fokus liegt dabei auf den Prinzipien des nutzerzentrierten Designs, die in jeder Phase angewendet werden sollten, um sicherzustellen, dass die Bedürfnisse und Anforderungen der Nutzer im Mittelpunkt stehen.
+% > Nach Iso Norm und ggf weitere quellen (Norman, Shneiderman)
 
 % #### 2.1.3 Gestaltungsprinzipien für interaktive Systeme
 \subsubsection{Gestaltungsprinzipien für interaktive Systeme}\label{subsubsec:gestaltungsprinzipien}
@@ -31,9 +71,9 @@
 % * **Inhalt:**
 % > - **Aus 2.1.1 ableitbare Designprinzipien**
 % > - **kognitive zusammenfassung der wichtigsten Heuristiken, mit Fokus auf ISO NORM 9241:210:2010**: (Additiv und als BOnus quellen: Norman, Shneiderman, Nielsen, Honeycomb)
-% > - **Feedback & Feedforward**: Nutzerführung.
+% > - **Feedback & Feed-Forward**: Nutzerführung.
 % > - **Konsistenz**: Erwartungskonformität.
-% >   Dialoggestaltungs prinzipien (9241-110)
+% >   Dialoggestaltungs Prinzipien (9241-110)
 % > - explizit NICHT hier drin: Direkte und indirekte Manipulation und WYSIWYG (kommt in 2.3.1)
 
 % #### 2.1.4 Methoden der Usability-Evaluation
