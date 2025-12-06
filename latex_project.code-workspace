@@ -6,6 +6,20 @@
   ],
   "settings": {
     "cSpell.language": "en,de-DE",
-    "cSpell.words": ["Affordances", "ausgegrauter", "hovert", "Interaktionsangebote", "Interaktionsdesign", "nosrc", "nutzerzentrierten", "Shneiderman", "Signifiers", "Supportkosten", "verklicken"]
+    "cSpell.words": [
+      "Affordances",
+      "ausgegrauter",
+      "DOET",
+      "hovert",
+      "Interaktionsangebote",
+      "Interaktionsdesign",
+      "Morville",
+      "nosrc",
+      "nutzerzentrierten",
+      "Shneiderman",
+      "Signifiers",
+      "Supportkosten",
+      "verklicken"
+    ]
   }
 }
