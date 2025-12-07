@@ -96,16 +96,39 @@ Denn wenn der User bereits weiß wie er das System bedienen muss, kann es nicht 
 
 % * **Inhalt:**
 % > - **Aus 2.1.1 ableitbare Designprinzipien**
+% > - **Definitionen von Usability & UX** (ISO 9241-11, ISO 9241-210 und weitere finden)
 % > - **kognitive zusammenfassung der wichtigsten Heuristiken, mit Fokus auf ISO NORM 9241:210:2010**: (Additiv und als BOnus quellen: Norman, Shneiderman, Nielsen, Honeycomb)
 % > -  Nutzerführung (affordances, signifiers, constraints, mapping, feedback, conceptual model, feedforward)
 % > - **Konsistenz**: Erwartungskonformität.
 % >   Dialoggestaltungs Prinzipien (9241-110)
 % > - explizit NICHT hier drin: Direkte und indirekte Manipulation und WYSIWYG (kommt in 2.3.1)
 
-Aus den psychologischen Konzepten von Norman lassen sich Gestaltungsprinzipien ableiten, die bei der Entwicklung interaktiver Systeme berücksichtigt werden sollten, um die Usability zu verbessern und die kognitive Last für die Nutzer zu reduzieren. Die ISO Norm 9241-110 definiert sieben Grundsätze für die Gestaltung interaktiver Systeme, die auf den Konzepten von Norman basieren und diese ergänzen. % nosrc: ISO 9241-110
+% todo Übergänge zwisdchen den Sätzen runder machen, ISt so ein stotternder Text
 
+Aus den psychologischen Grundgedanken haben sich in der Softwareentwicklung Kernbegriffe herauskristallisiert. Die ISO Norm 9241 definiert Usability als "das Ausmaß, in dem ein System, Produkt oder Service von bestimmten Benutzern verwendet werden kann, um in einem bestimmten Nutzungskontext bestimmte Ziele effektiv, effizient und zufriedenstellend zu erreichen." % src: ISO 9241-210
+% ! Direct quote (translated)
+User Experience (UX) wird in der ISO 9241-210 als "die Wahrnehmungen und Reaktionen einer Person, die sich aus der Nutzung oder der erwarteten Nutzung eines Produkts, Systems oder Dienstes ergeben" definiert. % src: ISO 9241-210
+% ! Direct quote (translated)
 
+Das Ziel für interaktive Systeme ist es, eine hohe Usability und eine positive User Experience zu gewährleisten. % nosrc
 
+Dazu wurden in ISO 9241-110 sieben Gestaltungsprinzipien entwickelt, die auf den zuvor beschriebenen psychologischen Konzepten basieren: % refine echte quelle holen wenn möglich (ISO 110)
+
+Das erste Prinzip ist die Aufgabenangemessenheit. Es besagt, dass ein System Nutzende bei der Erreichung ihrer spezifischen Arbeitsziele effektiv und effizient unterstützen soll. Das kann durch Prozessoptimierung, Automatisierung oder die Vorauswahl von Standardeinstellungen erreicht werden, um den Aufwand für den Nutzer zu minimieren. % src: Dialogprinzipien wurden überarbeitet (ProContext, 2020), Thomas Geis
+
+Eng damit verbunden ist die Selbstbeschreibungsfähigkeit, die sicherstellt, dass dem Nutzer zu jeder Zeit klar ist, in welchem Zustand sich das System befindet und welche Schritte als nächstes erwartet werden. Es sollte selbsterklärend sein. Dies korreliert direkt mit dem Einsatz von Signifiers und Feedback zum Bilden des Conceptual Models der Nutzer. So wird die Bedienung des Systems transparenter und verständlicher. % src: Dialogprinzipien wurden überarbeitet (ProContext, 2020), Thomas Geis
+
+Das dritte Prinzip, die Erwartungskonformität, verlangt, dass sich das System konsistent verhalten und dem erwarteten Verhalten der Nutzer entsprechen sollte. % src: Dialogprinzipien wurden überarbeitet (ProContext, 2020), Thomas Geis
+Wenn das Mapping und die Abläufe den Erfahrungen aus der physischen Welt oder bekannten Anwendungen gleichen, finden sich Nutzer schneller zurecht. % nosrc
+
+Wenn das System den Nutzer beim Entdecken, Ausprobieren und Wiedererkennen von Bedienfunktionen unterstützt, und auch dazu motiviert, ohne negative Auswirkungen hervorzurufen entspricht es dem Prinzip der Erlernbarkeit. % src: Dialogprinzipien wurden überarbeitet (ProContext, 2020), Thomas Geis
+
+Im System muss der Nutzer jederzeit die Kontrolle über das System haben und in der Lage sein, Prozesse zu starten, zu unterbrechen oder in ihrer Geschwindigkeit anzupassen. Zudem muss es flexibel sein, das heißt es passt sich den Gewohnheiten des Nutzers an und nicht umgekehrt. Außerdem muss es individualisierbar sein. Der Nutzer kann das System an seine Präferenzen anpassen. Dazu gehören zum Beispiel Accessibility-Einstellungen wie ein Hoher-Kontrast Modus, ein Farbenblindheits-Modus, aber auch der Wechsel zwischen Light- und Dark-Mode. Diese drei Ausprägungen sind zusammengefasst unter dem Prinzip der Steuerbarkeit. % src: Dialogprinzipien wurden überarbeitet (ProContext, 2020), Thomas Geis
+
+Robustheit gegen Benutzungsfehler ist das sechste Prinzip. Es besagt, dass das System so gestaltet sein muss, dass es Fehlbedienungen möglichst vermeidet, und wenn sie doch auftreten, diese abgefangen werden und es dem Nutzer ermöglicht wird, sie zu beheben. % src s.o
+
+Das letzte Interaktionsprinzip ist die Benutzerbindung. Es fordert, dass das System den Nutzer motiviert und ihm ein positives Nutzungserlebnis bietet, um eine langfristige Nutzung zu fördern. Dazu gehören Aspekte wie ansprechendes Design, Personalisierungsmöglichkeiten und die Berücksichtigung emotionaler Faktoren. % src s.o
+% addsrc
 
 % #### 2.1.3 Human Centered Design (HCD) Prinzipien
 \subsubsection{Human Centered Design (HCD) Prinzipien}\label{subsubsec:hcd-prinzipien}
@@ -119,7 +142,7 @@ Aus den psychologischen Konzepten von Norman lassen sich Gestaltungsprinzipien a
 \subsubsection{Methoden der Usability-Evaluation}\label{subsubsec:usability-evaluation}
 
 % * **Inhalt:**
-% > - **UX Honeycomb** (Peter Morville): Useful, Usable, Desirable. (WICHTIG für die spätere Nutzwertanalyse, liefert die Kategorien)
+% > - **UX Honeycomb** (Peter Morville): Useful, Usable, Desirable. (WICHTIG für die spätere Nutzwertanalyse, liefert die Kategorien) Trest
 % > - **Heuristische Evaluation** (Nielsen).
 % > - **Usability Testing** (Nutzer-basierte Evaluation).
 % > - **Qualitative vs. Quantitative Methoden**.
