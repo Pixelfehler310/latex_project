@@ -36,28 +36,37 @@ Das hier ist die Gliederung (Grundlagen und Hauptteil) der Zielarbeit:
 
 > **Inhalt:** Der qualitative Maßstab. Wir stellen den Menschen in den Mittelpunkt, bevor wir über Technik reden.
 
-#### 2.1.1 Gestaltungsprinzipien für interaktive Systeme
-
-> **Inhalt:**
->
-> - **Direkte Manipulation** (Shneiderman): Interaktion mit Objekten statt Code.
-> - **Feedback & Feedforward**: Nutzerführung.
-> - **Konsistenz**: Erwartungskonformität.
-
-#### 2.1.2 Kognitive Aspekte der Interaktion
+#### 2.1.1 Kognitive Aspekte der Interaktion (Psychologie, DOET und CLT)
 
 > **Inhalt:**
 >
 > - **Cognitive Load Theory**: Extrinsische Last (durch schlechtes Tool) vs. Intrinsische Last (Aufgabe). Ziel: Reduktion der extrinsischen Last durch den visuellen Editor.
 > - **Gulf of Execution/Evaluation** (Norman): Die Kluft zwischen Nutzerziel und Systembedienung verringern.
+> - **Norman's Konzepte**: Affordances, Signifiers, Mapping, Feedback, Constraints, Conceptual Model.
 
-#### 2.1.3 Methoden der Usability-Evaluation
+#### 2.1.2 Gestaltungsprinzipien für interaktive Systeme
+
+> **Inhalt:**
+>
+> - **Definitionen**: Usability (ISO 9241-11) & UX (ISO 9241-210).
+> - **ISO 9241-110 Interaktionsprinzipien**: Aufgabenangemessenheit, Selbstbeschreibungsfähigkeit, Erwartungskonformität, Erlernbarkeit, Steuerbarkeit, Robustheit, Benutzerbindung.
+
+#### 2.1.3 Human Centered Design (HCD) Prinzipien
+
+> **Inhalt:**
+>
+> - **HCD Definition**: Der Mensch im Mittelpunkt.
+> - **ISO 9241-210 Grundregeln**: 6 Prinzipien des HCD.
+> - **HCD Prozess**: Die 4 Phasen (Verstehen, Spezifizieren, Entwerfen, Evaluieren).
+
+#### 2.1.4 Methoden der Usability-Evaluation
 
 > **Inhalt:**
 >
 > - **UX Honeycomb** (Peter Morville): Useful, Usable, Desirable.
 > - **Heuristische Evaluation** (Nielsen).
-> - **Nutzwertanalyse / SWOT** (für den strategischen Vergleich).
+> - **Usability Testing**: Nutzer-basierte Evaluation.
+> - **Qualitative vs. Quantitative Methoden**.
 
 ### 2.2 Modellgetriebene Softwareentwicklung (MDSE)
 
