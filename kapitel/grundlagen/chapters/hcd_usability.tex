@@ -13,6 +13,8 @@
 % > - **Definitionen Usability & User Experience** (ISO 9241-11, ISO 9241-210 und weitere finden)
 % > - Reihenfolge Variabel!
 
+% todo The invisible Computer durchsuchen, um als zweitbasis quelle zu nutzen
+
 Softwaresysteme werden in der heutigen Welt immer komplexer. Um die Kunden zu überzeugen werden immer mehr Features und Funktionalitäten integriert. Dies führt jedoch oft dazu, dass die Bedienung dieser Systeme für die Nutzer zunehmend schwieriger und unübersichtlicher wird. % src: The Invisible Computer, Norman 1998, p.79
 Diese Faktoren werden von der Digitalisierung und der zunehmenden Vernetzung und Automatisierung weiter verstärkt. % nosrc
 
@@ -38,9 +40,19 @@ Die intrinsische Last ist oft unvermeidbar, da sie von der Natur der Aufgabe abh
 % addsrc
 Da die extrinsische Last die einzige zu minimierende Last ist, ist in den folgenden Abschnitten die Reduzierung der kognitiven Last meist als Reduzierung der extrinsischen Last zu verstehen. % refine
 
+Um die kognitive Anstrengung bei der Nutzung eines Systems zu senken muss man verstehen, durch welche Probleme die kognitive Anstrengung entsteht. Laut Hutchins, Hollan und Norman gibt es zwei Hauptprobleme, die bei der Interaktion zwischen Mensch und System auftreten können und kognitive Last verursachen: den Gulf of Execution und den Gulf of Evaluation.
+% src: Direct Manipulation Interfaces, Hutchins, Hollan, Norman 1985, p. 318 (aus Human Computer Interaction)
+
+Der Gulf of Execution beschreibt die Informationslücke die der Nutzer überwinden muss um herauszufinden wie das System funktioniert und wie er sein Ziel erreichen kann. % src: The Design of Everyday Things, Norman p.53 % src2: Direct Manipulation Interfaces, Hutchins, Hollan, Norman 1985
+
+Der Gulf of Evaluation ist die Informationslücke, die der Nutzer überwinden muss um zu verstehen was im System passiert ist, nachdem er eine Aktion ausgeführt hat, und ob ihm das geholfen hat sein Ziel zu erreichen. % src: The Design of Everyday Things, Norman p.53
+Das Ziel eines gut gestalteten Systems ist es, diese beiden Informationslücken so klein wie möglich zu halten, indem es dem Nutzer klare Signale und Rückmeldungen gibt, die ihm helfen, das System zu verstehen und effektiv zu nutzen. % src: The Design of Everyday Things, Norman p.53
+
 Donald (Don) Norman, Professor für Kognitionswissenschaften und Informatik, hat in seinen Büchern The Design of Everyday Things und The Invisible Computer die wesentlichen psychologischen Vorgänge im menschlichen Gehirn bei der Interaktion von Objekten und Systemen analysiert und Ansätze vorgestellt die Nutzbarkeit der Systeme zu verbessern und die kognitive Last für die Nutzer zu reduzieren. 
 Norman beschreibt 6 psychologische Konzepte, die bei der Gestaltung von benutzerfreundlichen Systemen berücksichtigt werden sollten.
 Dazu gehören unter anderem Affordances, Signifiers, Mapping, Feedback, Constraints und das Conceptual Model. % src: The Design of Everyday Things, Norman 2013; The Invisible Computer, Norman 1998
+
+% TODO Discoverability noch erklären ??
 
 Affordances sind Eigenschaften eines Systems, die Repräsentieren, was der User er tun kann. Sie definieren die Interaktionsangebote. % src: DOET p 27
 Interaktionsangebote sind nicht immer offensichtlich. Eine Affordance bedeutet nicht automatisch, dass der Nutzer sie wahrnimmt. Bleibt die Interaktionsmöglichkeit unklar, kann sie nicht genutzt werden. Hier kommen Signifier ins Spiel. Signifier sind Hinweise oder Markierungen, die dem Nutzer die Interaktionsmöglichkeit, sowie deren Ausführung verdeutlichen. % src: DOET p 27-28
@@ -51,7 +63,7 @@ Constraints begrenzen die möglichen Interaktionen, um Fehler zu vermeiden und d
 Im Kontext von grafischen Benutzeroberflächen sind vor allem logische Constraints von Bedeutung. Sie nutzen das logische Verständnis des Nutzers über die Funktionsweise des Systems, um nur sinnvolle Aktionen zuzulassen. % src: DOET p 133
 Ein klassisches Beispiel ist ein ausgegrauter (deaktivierter) Button in einem Formular, solange Pflichtfelder nicht ausgefüllt sind. Der Nutzer wird so aktiv daran gehindert, unvollständige Daten abzusenden, die zu Fehlern führen würden.
 
-Das vierte Konzept ist Mapping. Mapping beschreibt die Beziehung zwischen den Steuerelementen eines Systems und den Aktionen, die sie auslösen. % src: DOET p 37
+Das vierte Konzept ist das Mapping. Mapping beschreibt die Beziehung zwischen den Steuerelementen eines Systems und den Aktionen, die sie auslösen. % src: DOET p 37
 Gutes Mapping bedeutet, dass die Anordnung der Steuerelemente intuitiv und logisch ist, sodass der User leicht verstehen kann, welche Steuerung welche Aktion auslöst. % src: DOET p 38
 
 % todo Beispiel für Mapping
@@ -61,42 +73,47 @@ Feedback informiert den Nutzer über den aktuellen Zustand des Systems oder die 
 
 Feedback ist entscheidend, damit der User versteht, was im System passiert, und um ihm Sicherheit bei der Interaktion zu geben. Dauert Feedback zu lange oder fehlt es ganz, kann der User verwirrt werden und Fehler machen. % src: DOET p 41
 Außerdem muss Feedback geplant und priorisiert werden, da auch zu viel oder unnötiges Feedback den User überfordern, ablenken und verwirren kann. % src: DOET p 41 
-Dies kann in verschiedenen Formen geschehen, wie visuelle Hinweise, akustische Signale oder haptische Rückmeldungen. % nosrc
+Dies kann in verschiedenen Formen geschehen, zum Beispiel durch visuelle Hinweise, akustische Signale oder haptische Rückmeldungen. % nosrc
+Mit Feedback wird der Gulf of Evaluation verringert, da der Nutzer schneller und einfacher verstehen kann, was im System passiert ist und ob seine Aktionen erfolgreich waren. % nosrc
+
+Die Kombination von Affordances, Signifiers, Constraints und Mapping ergibt ein Feedforward-System. Feedforward ist genau das Gegenteil von Feedback. Anstatt, dass dem User gezeigt oder erklärt wird, was er getan hat, nachdem er es getan hat, wird ihm gezeigt, was er tun kann und was die Resultate der möglichen Aktionen sind, bevor er sie tätigt. Dadurch wird der Gulf of Execution verkleinert, da der Nutzer weniger kognitive Anstrengung aufwenden muss, um herauszufinden, wie das System funktioniert und wie er sein Ziel erreichen kann. % src: DOET, p. 82,83
+% TODO Sätze ein bisschen sortieren.
 
 Das sechste Konzept ist das Conceptual Model. Ein Conceptual Model ist eine mentale Repräsentation, die der User von einem System entwickelt, basierend auf seinen Erfahrungen, seinem Wissen und den Informationen, die das System bereitstellt, über die Funktionsweise des Systems % src: DOET p 42   
 % todo Satz verbessern
 Oft entstehen diese Modelle durch das Lernen des Systems durch Interaktion und Ausprobieren, durch den Informationstransfer von Person zu Person, oder durch das Lesen von Dokumentationen oder ähnlichen Systembeschreibungen. % src: DOET p 43
 Das Conceptual Model ist eng verbunden mit der germanen Last der CLT, da es das gelernte Wissen des Nutzers über das System repräsentiert und ihm hilft, neue Informationen zu integrieren. % refine
-
-Diese Prinzipien erklären die Wahrnehmung eines Nutzers bei der Interaktion mit einem System. Wenn man diese Verstanden hat kann man sie gezielt einsetzen, um die Wahrnehmung des Nutzers zu lenken, und dadurch die Bedienung zu vereinfachen und die kognitive Last zu reduzieren. % refine
-
-Nach Hutchins, Hollan und Norman gibt es zwei „Gulfs“, die bei der Interaktion zwischen Mensch und System überwunden werden müssen: den Gulf of Execution und den Gulf of Evaluation. % search for: User Centered System Design, 1986
-% src: Direct Manipulation Interfaces, Hutchins, Hollan, Norman 1985
-% addsrc
+Außerdem hilft das Conceptual Model sowohl den Gulf of Execution, als auch den Gulf of Evaluation zu überbrücken, da das Systemverständnis, dass das Conceptual Model darstellt die Ursprungsprobleme löst. % src: Direct Manipulation Interfaces, Hutchins, Hollan, Norman 1985, p. 318
+Denn wenn der User bereits weiß wie er das System bedienen muss, kann es nicht mehr zu Problemen führen.
 
 
 % todo Beispiele für die psychologischen Konzepte einfügen (Affordances, Signifiers, Mapping, Feedback, Constraints, Conceptual Model) (jedes einzeln, direkt beim inhaltlichen Abschnitt)
 
-% todo Feed-Forward
+% todo Feed-Forward noch erklären ??
+
+% #### 2.1.2 Gestaltungsprinzipien für interaktive Systeme
+\subsubsection{Gestaltungsprinzipien für interaktive Systeme}\label{subsubsec:gestaltungsprinzipien}
+
+% * **Inhalt:**
+% > - **Aus 2.1.1 ableitbare Designprinzipien**
+% > - **kognitive zusammenfassung der wichtigsten Heuristiken, mit Fokus auf ISO NORM 9241:210:2010**: (Additiv und als BOnus quellen: Norman, Shneiderman, Nielsen, Honeycomb)
+% > -  Nutzerführung (affordances, signifiers, constraints, mapping, feedback, conceptual model, feedforward)
+% > - **Konsistenz**: Erwartungskonformität.
+% >   Dialoggestaltungs Prinzipien (9241-110)
+% > - explizit NICHT hier drin: Direkte und indirekte Manipulation und WYSIWYG (kommt in 2.3.1)
+
+Aus den psychologischen Konzepten von Norman lassen sich Gestaltungsprinzipien ableiten, die bei der Entwicklung interaktiver Systeme berücksichtigt werden sollten, um die Usability zu verbessern und die kognitive Last für die Nutzer zu reduzieren. Die ISO Norm 9241-110 definiert sieben Grundsätze für die Gestaltung interaktiver Systeme, die auf den Konzepten von Norman basieren und diese ergänzen. % nosrc: ISO 9241-110
 
 
-% #### 2.1.2 Human Centered Design (HCD) Prinzipien
+
+
+% #### 2.1.3 Human Centered Design (HCD) Prinzipien
 \subsubsection{Human Centered Design (HCD) Prinzipien}\label{subsubsec:hcd-prinzipien}
 
 % * **Inhalt:**
 %  > Der HCD Prozess mit seinen vier Phasen (Verstehen und Spezifizieren des Nutzungskontextes, Spezifizieren der Nutzungsanforderungen, Gestalten der Lösung, Evaluieren der Lösung) wird vorgestellt. Der Fokus liegt dabei auf den Prinzipien des nutzerzentrierten Designs, die in jeder Phase angewendet werden sollten, um sicherzustellen, dass die Bedürfnisse und Anforderungen der Nutzer im Mittelpunkt stehen.
 % > Nach Iso Norm und ggf weitere quellen (Norman, Shneiderman)
 
-% #### 2.1.3 Gestaltungsprinzipien für interaktive Systeme
-\subsubsection{Gestaltungsprinzipien für interaktive Systeme}\label{subsubsec:gestaltungsprinzipien}
-
-% * **Inhalt:**
-% > - **Aus 2.1.1 ableitbare Designprinzipien**
-% > - **kognitive zusammenfassung der wichtigsten Heuristiken, mit Fokus auf ISO NORM 9241:210:2010**: (Additiv und als BOnus quellen: Norman, Shneiderman, Nielsen, Honeycomb)
-% > - **Feedback & Feed-Forward**: Nutzerführung.
-% > - **Konsistenz**: Erwartungskonformität.
-% >   Dialoggestaltungs Prinzipien (9241-110)
-% > - explizit NICHT hier drin: Direkte und indirekte Manipulation und WYSIWYG (kommt in 2.3.1)
 
 % #### 2.1.4 Methoden der Usability-Evaluation
 \subsubsection{Methoden der Usability-Evaluation}\label{subsubsec:usability-evaluation}
