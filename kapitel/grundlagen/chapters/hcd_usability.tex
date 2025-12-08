@@ -194,7 +194,7 @@ Expertenbasierte Evaluationsmethoden beschreiben die Analyse und Bewertung des S
 
 Ein guter wissenschaftlich fundierter Weg der expertenbasierten Evaluation ist die Heuristische Evaluation nach Jakob Nielsen. % nosrc
 
-% todo sagen wofür die Heuristiken genau entworfen sind
+% todo sagen wofür die Heuristiken genau entworfen sind s. src: Nielsen 1994
 
 Nielsen hat zehn allgemeine Usability-Heuristiken definiert, die als Bewertungsgrundlage für interaktive Systeme dienen können: % src: Nielsen 1994, updated. 2024
 Diese Heuristiken decken sich stark mit den ISO-Prinzipien und den psychologischen Grundlagen von Norman, bieten aber ein konkreteres Werkzeug für die Bewertung.
@@ -231,16 +231,18 @@ Das beste System benötigt keine Dokumentation, aber wenn sie notwendig ist, sol
 % addsrc: nielsens primärquelle 1994a und 1994b aus obigem artikel
 % ? Wie quotet man das dann?
 
-% refine Das hier auch in den Text einbauen?
-% Es gibt auch die Gestaltungsgesetze von Shneiderman oder das Honeycomb Modell von Morville, die als Bewertungsgrundlage dienen können. % src: Shneiderman 1998; Morville 2004
-% Da in dieser Arbeit jedoch nach Nielsens Heuristiken evaluiert wird und die Modelle in ihren Inhalten sehr ähnlich sind, werden sie an dieser Stelle nicht weiter ausgeführt. 
+Der klassische Ablauf einer heuristischen Evaluation sieht vor, dass mehrere Experten das System unabhängig voneinander prüfen und Verstöße gegen diese Heuristiken protokollieren. Anschließend werden die Ergebnisse konsolidiert und nach Schweregrad bewertet.
+% addsrc, kp welche quelle von Nielsen (1994), aber sind ja nur so 5
+Eine heuristische Evaluation nach Nielsen liefert einem nur implizit ob ein System eine gute User Experience oder Usability hat. Werden viele Fehler oder Probleme angemerkt ist die Usability und User Experience des Systems wahrscheinlich schlecht. Werden wenige oder keine Probleme gefunden, ist die Usability und User Experience wahrscheinlich gut. % nosrc
+Es kann aber auch verzerrt werden durch besonders erfahrene oder genaue Experten, die mehr Probleme finden als andere. % nosrc
+Der Kerngewinn der heuristischen Evaluation liegt also weniger im beantworten der Frage, ob ein System eine gute Usability hat, sondern vielmehr darin zu belegen, warum ein System eine gute oder schlechte User Experience bietet.
+
+Um herauszufinden, ob ein System tatsächlich eine gute Usability und User Experience bietet und Vergleichswerte zu erhalten, sind nutzerbasierte Evaluationsmethoden notwendig. % nosrc
 
 
 
-Das UX Honeycomb von Peter Morville beschreibt sieben Facetten der User Experience: Nützlichkeit (useful), Nutzbarkeit (usable), Begehrenswert (desirable), Findbarkeit (findable), Zugänglichkeit (accessible), Glaubwürdigkeit (credible) und Wertvoll (valuable). % src: UX Honeycomb, Morville 2004
+Nutzerbasierte Evaluationsmethoden hingegen beziehen tatsächliche Nutzer in den Evaluationsprozess mit ein. % verify: ISO 9241-210, p. 17
+% addsrc
 
-Nützlichkeit bedeutet, dass das System einen Zweck erfüllt und den Nutzern hilft, ihre Ziele zu erreichen. Nutzbarkeit bezieht sich darauf, wie einfach und effizient das System zu bedienen ist. Begehrenswert beschreibt die emotionale Anziehungskraft des Systems, also wie ansprechend und attraktiv es für die Nutzer ist. % src: UX Honeycomb, Morville 2004
 
-Der klassische Ablauf einer heuristischen Evaluation sieht vor, dass mehrere Experten das System unabhängig voneinander prüfen und Verstöße gegen diese Heuristiken protokollieren. Anschließend werden die Ergebnisse konsolidiert und nach Schweregrad bewertet. % src: Nielsen 1994 
-% refine, kp welche von Nielsen, aber sind ja nur so 5
-Dies ermöglicht eine effiziente Identifikation von Usability-Problemen bereits in frühen Entwicklungsphasen, ohne dass aufwendige Nutzertests notwendig sind.
+
